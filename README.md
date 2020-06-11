@@ -7,6 +7,8 @@ Script to debloat Linux Mint. It removes a lot of random junk in LM that many pe
 
 # How to use
 `git clone https://www.github.com/anime-is-real/Linux-Mint-Debloater`
+
 `cd Linux-Mint-Debloater`
+
 `sudo bash debloat-mint.sh`
 
