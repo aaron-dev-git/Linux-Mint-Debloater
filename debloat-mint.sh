@@ -4,7 +4,7 @@
 ## Remove the bloat
 sudo apt purge redshift libreoffice-core libreoffice-common transmission-gtk hexchat baobab seahorse thunderbird rhythmbox pix simple-scan drawing xed gnote xreader onboard gnome-calendar flatpak 
 
-sudo apt autoclean 
+sudo apt autoremove && sudo apt clean
 
 ##mark packages on hold
 sudo apt-mark hold mintreport flatpak
