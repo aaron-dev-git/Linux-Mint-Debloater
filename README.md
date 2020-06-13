@@ -10,5 +10,6 @@ Script to debloat Linux Mint. It removes a lot of random junk in LM that many pe
 
 `cd Linux-Mint-Debloater`
 
-`sudo bash debloat-mint.sh`
+`chmod +x debloat-mint.sh`
 
+`sudo bash debloat-mint.sh`
