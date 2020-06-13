@@ -38,7 +38,7 @@ if [ $? = 0 ]; then
 
 	##mark packages on hold
 	sudo apt purge flatpak
-	sudo apt-mark hold mintreport flatpak
+	sudo apt-mark hold flatpak
 else
 	exit
 fi
