@@ -1,37 +1,57 @@
 #!/bin/bash
 
+zenity --question --text="Do you want to debloat your system?" --no-wrap
+if [ $? = 0 ]; then
 
-## Remove the bloat
-sudo apt purge redshift 
-sudo apt purge libreoffice-core
-sudo apt purge libreoffice-common
-sudo apt purge transmission-gtk
-sudo apt purge hexchat
-sudo apt purge baobab
-sudo apt purge seahorse
-sudo apt purge thunderbird
-sudo apt purge rhythmbox
-sudo apt purge pix
-sudo apt purge simple-scan
-sudo apt purge drawing
-sudo apt purge xed
-sudo apt purge gnote
-sudo apt purge xreader
-sudo apt purge onboard
-sudo apt purge gnome-calendar
-sudo apt purge flatpak 
-sudo apt purge gnome-calculator
-sudo apt purge mintstick
-sudo apt purge celluloid
-sudo apt purge timeshift
-sudo apt purge gnome-logs
-sudo apt purge gnome-power-manager
-sudo apt purge onboard
 
-sudo apt autoremove && sudo apt clean
+	## Remove the bloat
+	sudo apt purge redshift -y
+	sudo apt purge libreoffice-core -y
+	sudo apt purge libreoffice-common -y
+	sudo apt purge transmission-gtk -y
+	sudo apt purge hexchat -y
+	sudo apt purge baobab -y
+	sudo apt purge seahorse -y
+	sudo apt purge thunderbird -y
+	sudo apt purge rhythmbox -y
+	sudo apt purge pix -y
+	sudo apt purge simple-scan -y
+	sudo apt purge drawing -y
+	sudo apt purge xed -y
+	sudo apt purge gnote -y
+	sudo apt purge xreader -y
+	sudo apt purge onboard -y
+	sudo apt purge gnome-calendar -y
+	sudo apt purge gnome-calculator -y
+	sudo apt purge celluloid -y
+	sudo apt purge gnome-logs -y
+	sudo apt purge gnome-power-manager -y
+	sudo apt purge onboard -y
 
-##mark packages on hold
-sudo apt-mark hold mintreport flatpak
+	sudo apt autoremove -y && sudo apt clean
+else
+	exit
+fi
 
-#update and upgrade mint
-sudo apt update && sudo apt upgrade
+zenity --question --text "Do you want flatpak and to mark it on hold?" --no-wrap
+if [ $? = 0 ]; then
+
+	##mark packages on hold
+	sudo apt purge flatpak
+	sudo apt-mark hold mintreport flatpak
+else
+	exit
+fi
+
+
+zenity --question --text "Would you like to update your system?" --no-wrap
+if [ $? = 0 ]; then
+
+	#update and upgrade mint
+	sudo apt update && sudo apt upgrade -y
+
+else
+	exit
+fi
+
+exit
