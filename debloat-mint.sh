@@ -21,7 +21,7 @@ if [ $? = 0 ]; then
 	sudo apt purge xreader -y
 	sudo apt purge onboard -y
 	sudo apt purge gnome-calendar -y
-z	sudo apt purge celluloid -y
+	sudo apt purge celluloid -y
 	sudo apt purge gnome-logs -y
 	sudo apt purge gnome-power-manager -y
 	sudo apt purge onboard -y
